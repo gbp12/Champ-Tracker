@@ -34,6 +34,7 @@ export const DivFilter = styled.div`
 export const StyledDiv = styled.div`
     margin: 20px;
     background-color: #1e1e21;
+    margin-top: 0px;
 
     :hover {
             transition: background-color .2s linear;

@@ -22,39 +22,63 @@ export const Campeones = (props) => {
 		}
 	}
 
-	const nombres = []
-	const titulos = []
-	const imagenes = []
-	const roles = []
-	for (var i in lista) {
-		var nombre = lista[i].name
-		var titulo = lista[i].title
-		var imagen = lista[i].image.full
-		var Rol = lista[i].tags
 
 
+	const datos = {
+		nombres: [],
+		titulos: [],
+		imagenes: [],
+		roles: [],
+	}
 
-		nombres.push(nombre)
-		titulos.push(titulo)
-		imagenes.push(imagen)
-		roles.push(Rol)
+	const initialDatos = () => {
+		for (var i in lista) {
+			var nombre = lista[i].name
+			var titulo = lista[i].title
+			var imagen = lista[i].image.full
+			var Rol = lista[i].tags
 
+			datos.nombres.push(nombre)
+			datos.titulos.push(titulo)
+			datos.imagenes.push(imagen)
+			datos.roles.push(Rol)
 
+		}
 	}
 	const filas = []
 	var campeon = []
 
-	for (var x = 0; x < nombres.length; x += 3) {
-		campeon = nombres.slice(x, x + 3)
 
-		filas.push(campeon)
-		campeon = []
+	const spliting = () => {
+
+		if (rol === " ") {
+			for (var x = 0; x < datos.nombres.length; x += 4) {
+				campeon = datos.nombres.slice(x, x + 4)
+
+				filas.push(campeon)
+				campeon = []
 
 
 
+
+			}
+		} else {
+			for (var x = 0; x < datos.nombres.length; x += 1) {
+				campeon = datos.nombres.slice(x, x + 1)
+
+				filas.push(campeon)
+				campeon = []
+
+
+
+
+			}
+		}
 	}
 
+	initialDatos()
 
+	spliting()
 
 
 	useEffect(() => {
@@ -62,10 +86,12 @@ export const Campeones = (props) => {
 	}, [])
 
 	const Bloque = (props) => {
-		var index = nombres.indexOf(props.campeon)
-		const tittle = titulos.find((x) => titulos.indexOf(x) === index)
-		const foto = imagenes.find((x) => imagenes.indexOf(x) === index)
-		const rolArr = roles.find((x) => roles.indexOf(x) === index)
+		var index = datos.nombres.indexOf(props.campeon)
+		const tittle = datos.titulos.find((x) => datos.titulos.indexOf(x) === index)
+		const foto = datos.imagenes.find((x) => datos.imagenes.indexOf(x) === index)
+		const rolArr = datos.roles.find((x) => datos.roles.indexOf(x) === index)
+
+
 
 		const filtro = () => {
 			if (rol !== " ") {
@@ -82,16 +108,13 @@ export const Campeones = (props) => {
 		}
 
 		var newFoto = foto.replace(".png", "")
-
 		var splash = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${newFoto}_0.jpg`
 
-
-
-
+		filtro()
 		return (
 			<>
 				{
-					filtro() ? <StyledDiv>
+					filtro() ? <StyledDiv >
 						<H1>
 							{props.campeon}
 						</H1>
@@ -116,7 +139,6 @@ export const Campeones = (props) => {
 		)
 	}
 
-
 	return (
 		<>
 
@@ -125,7 +147,7 @@ export const Campeones = (props) => {
 					<DivPrueba key={Math.random()} >
 						{
 							x.map((h) => (
-								<Bloque key={h} campeon={h} />
+								<Bloque key={h} campeon={h} plus />
 							))
 						}
 					</DivPrueba>
