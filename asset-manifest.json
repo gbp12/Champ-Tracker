@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Champ-Tracker/static/css/main.56871214.css",
-    "main.js": "/Champ-Tracker/static/js/main.51393f0b.js",
+    "main.js": "/Champ-Tracker/static/js/main.5bcb7657.js",
     "static/js/787.12d5f4eb.chunk.js": "/Champ-Tracker/static/js/787.12d5f4eb.chunk.js",
     "index.html": "/Champ-Tracker/index.html",
     "main.56871214.css.map": "/Champ-Tracker/static/css/main.56871214.css.map",
-    "main.51393f0b.js.map": "/Champ-Tracker/static/js/main.51393f0b.js.map",
+    "main.5bcb7657.js.map": "/Champ-Tracker/static/js/main.5bcb7657.js.map",
     "787.12d5f4eb.chunk.js.map": "/Champ-Tracker/static/js/787.12d5f4eb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.56871214.css",
-    "static/js/main.51393f0b.js"
+    "static/js/main.5bcb7657.js"
   ]
 }
