@@ -114,7 +114,9 @@ export const Campeones = (props) => {
 		return (
 			<>
 				{
-					filtro() ? <StyledDiv >
+					filtro() ? <StyledDiv onClick={() => {
+						alert(`Tu Campeón es ${props.campeon}`)
+					}}  >
 						<H1>
 							{props.campeon}
 						</H1>
@@ -147,7 +149,7 @@ export const Campeones = (props) => {
 					<DivPrueba key={Math.random()} >
 						{
 							x.map((h) => (
-								<Bloque key={h} campeon={h} plus />
+								<Bloque key={h} campeon={h} />
 							))
 						}
 					</DivPrueba>
