@@ -3,9 +3,7 @@ import { useEffect, useState } from "react"
 import { StyledDiv, H1, H3, Img, DivPrueba } from "./components/styles"
 import { Introduccion } from "./components/Intro"
 import { Header } from "./components/Header"
-
-
-
+import { StyledCampeones } from "./components/styles"
 
 export const Campeones = (props) => {
 	const [lista, setlista] = useState([])
@@ -15,10 +13,7 @@ export const Campeones = (props) => {
 	async function fetchData() {
 		const response = await axios.get("https://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion.json")
 		if (response.status === 200) {
-
 			setlista(response.data.data)
-
-
 		}
 	}
 
@@ -45,6 +40,8 @@ export const Campeones = (props) => {
 
 		}
 	}
+
+
 	const filas = []
 	var campeon = []
 
@@ -142,7 +139,7 @@ export const Campeones = (props) => {
 	}
 
 	return (
-		<>
+		<StyledCampeones>
 
 			{
 				filas.map((x) => (
@@ -160,7 +157,7 @@ export const Campeones = (props) => {
 
 
 
-		</>
+		</StyledCampeones>
 	)
 }
 

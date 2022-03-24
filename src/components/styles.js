@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import 'animate.css';
+import { Campeones } from "../App";
 
 
 
@@ -101,6 +102,10 @@ export const H3 = styled.h3`
 
 
     :hover {
+        //transition: background-color, color 1.2s linear;
+        transition-property:  background-color, color;
+          transition-duration: 0.75s, 0.75s;
+
         background-color: ${props => props.filter ? "white" : ""};
         color: ${props => props.filter ? "black" : "white"};
         cursor: ${props => props.filter ? "pointer" : "auto"};
@@ -149,4 +154,11 @@ export const Rol = styled(H3)`
     
     
     }
+`
+
+
+export const StyledCampeones = styled.div`
+
+    display: flex;
+    flex-direction: column;
 `
