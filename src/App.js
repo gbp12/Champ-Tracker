@@ -49,8 +49,8 @@ export const Campeones = (props) => {
 	const spliting = () => {
 
 		if (rol === " ") {
-			for (var x = 0; x < datos.nombres.length; x += 4) {
-				campeon = datos.nombres.slice(x, x + 4)
+			for (var x = 0; x < datos.nombres.length; x += 3) {
+				campeon = datos.nombres.slice(x, x + 3)
 
 				filas.push(campeon)
 				campeon = []

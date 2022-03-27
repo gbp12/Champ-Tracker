@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import 'animate.css';
-import { Campeones } from "../App";
 
 
 
@@ -29,6 +28,16 @@ export const DivFilter = styled.div`
     padding: 10px;
     border: 2px solid #fff;
     border-top: none;
+     @media only screen and (max-width: 450px) {
+		top: 40px;
+        border-right: none;
+        border-left: none;
+
+	}
+    @media only screen and (max-width: 1500px) {
+		left: 0;
+        right: 0;
+	}
 
 `
 
@@ -36,7 +45,11 @@ export const StyledDiv = styled.div`
     margin: 20px;
     background-color: #1e1e21;
     margin-top: 0px;
-
+    @media only screen and (max-width: 700px) {
+		margin: 4px;
+        height: auto;
+	}
+   
     :hover {
             transition: background-color .2s linear;
 
@@ -69,6 +82,8 @@ export const StyledHeader = styled.header`
     top: 0px;
     z-index: 3;
     border-bottom: 2px solid #fff;
+     
+
 
 
 
@@ -84,6 +99,10 @@ padding: 7px;
     margin-top: ${props => props.intro ? "200px" : "0"};
     font-style: ${props => props.intro ? "italic" : "normal"};
     font-size:  ${props => props.intro ? "50px" : "big"};
+    @media only screen and (max-width: 450px) {
+        font-size:  ${props => props.intro ? "30px" : "15px"};
+
+	}
 `
 
 export const H3 = styled.h3`
@@ -99,6 +118,12 @@ export const H3 = styled.h3`
     border-radius: 20px;
     padding: 4px;
 
+@media only screen and (max-width: 450px) {
+		font-size: 8px;
+        margin-left: 0;
+        margin-right: 0;
+  
+    }
 
 
     :hover {
@@ -118,6 +143,7 @@ export const P = styled.p`
     color: white;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
 `
 /* imagen de campeones que aumentan con hover*/
 
@@ -137,6 +163,10 @@ display: flex;
 justify-content: space-around;
 width: 60%;
 margin: 50px   auto;
+@media only screen and (max-width: 800px) {
+		width: 100%;
+	}
+   
 `
 
 export const Rol = styled(H3)`
@@ -146,6 +176,9 @@ export const Rol = styled(H3)`
     border-right: 1px solid #fff;
     border-left: 6px solid #fff;
     border-bottom: 5px solid #fff;
+    @media only screen and (max-width: 1500px) {
+		margin: 2%;
+	}
 
     :hover {
     cursor: pointer;
