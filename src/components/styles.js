@@ -135,7 +135,7 @@ position: relative;
 export const DivPrueba = styled.div`
 display: flex;
 justify-content: space-around;
-width: 75%;
+width: 60%;
 margin: 50px   auto;
 `
 
