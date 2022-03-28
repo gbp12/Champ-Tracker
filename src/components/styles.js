@@ -2,7 +2,6 @@ import styled from "styled-components"
 import 'animate.css';
 
 
-
 export const HR = styled.hr`
 
     height: 10px;
@@ -42,6 +41,7 @@ export const DivFilter = styled.div`
 `
 
 export const StyledDiv = styled.div`
+    height: 100%;
     margin: 20px;
     background-color: #1e1e21;
     margin-top: 0px;
@@ -98,7 +98,7 @@ padding: 7px;
     font-family: 'Noto';
     margin-top: ${props => props.intro ? "200px" : "0"};
     font-style: ${props => props.intro ? "italic" : "normal"};
-    font-size:  ${props => props.intro ? "50px" : "big"};
+    font-size:  ${props => props.intro ? "50px" : "150%"};
     @media only screen and (max-width: 450px) {
         font-size:  ${props => props.intro ? "30px" : "15px"};
 
@@ -121,7 +121,7 @@ export const H3 = styled.h3`
 @media only screen and (max-width: 450px) {
 		font-size: 8px;
         margin-left: 0;
-        margin-right: 0;
+        
   
     }
 
@@ -191,7 +191,7 @@ export const Rol = styled(H3)`
 
 
 export const StyledCampeones = styled.div`
-
     display: flex;
     flex-direction: column;
 `
+
