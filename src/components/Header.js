@@ -1,6 +1,6 @@
 import { StyledHeader, H3, DivFilter, Rol } from "./styles"
 import { useState } from "react";
-export const Header = ({ setactualRol }) => {
+export const Header = ({ setState }) => {
     const [mostrar, setmostrar] = useState(false);
 
     const roles = ["Fighter", "Tank", "Mage", "Assassin", "Marksman", "Support"]
@@ -29,7 +29,12 @@ export const Header = ({ setactualRol }) => {
                 {
                     roles.map((x) => (
                         <Rol cabecera key={x} onClick={() => {
-                            setactualRol(x)
+                            setState(
+                                {
+                                    campeon: "",
+                                    rol: x
+                                }
+                            )
                         }}
 
                         >
@@ -38,7 +43,10 @@ export const Header = ({ setactualRol }) => {
                     ))
                 }
                 <Rol cabecera onClick={() => {
-                    setactualRol(" ")
+                    setState({
+                        campeon: "",
+                        rol: " "
+                    })
                 }}>
                     Reset
                 </Rol>

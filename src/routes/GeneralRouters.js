@@ -7,17 +7,21 @@ import { useState } from "react"
 import { H1 } from "../components/styles"
 
 const Generalrouters = () => {
-    const [actualRol, setactualRol] = useState(" ");
+    const [state, setState] = useState({
+        campeon: "void",
+        rol: " "
+    });
+
 
     return (
         <BrowserRouter>
             <Routes>
                 <Route index path="/Champ-Tracker" element={<div>
-                    <Header setactualRol={setactualRol} />
+                    <Header setState={setState} />
                     <Introduccion />
-                    <Campeones actualRol={actualRol} />
+                    <Campeones setState={setState} state={state} />
                 </div>} />
-                <Route path="/Champ-Tracker/*" element={<div><H1>Esto es un campeon</H1></div>}></Route>
+                <Route path={`/Champ-Tracker/${state.campeon}`} element={<div><H1>Esto es un campeon</H1></div>}></Route>
                 <Route path="*" element={<div><H1>ERROR 404</H1></div>}></Route>
 
 

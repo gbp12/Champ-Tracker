@@ -8,9 +8,10 @@ const StyledLink = styled(Link)`
 text-decoration: none;
 height: 100%;
 `
-export const Campeones = (props) => {
+export const Campeones = ({ setState, state }) => {
 	const [lista, setlista] = useState([])
-	const rol = props.actualRol
+	const rol = state.rol
+	var prueba = setState
 
 
 	async function fetchData() {
@@ -92,7 +93,6 @@ export const Campeones = (props) => {
 		const rolArr = datos.roles.find((x) => datos.roles.indexOf(x) === index)
 
 
-
 		const filtro = () => {
 			if (rol !== " ") {
 				if (rolArr[0] === rol) {
@@ -114,22 +114,21 @@ export const Campeones = (props) => {
 		return (
 			<StyledLink to={`/Champ-Tracker/${props.campeon}`}>
 				{
-					filtro() ? <StyledDiv>
+					filtro() ? <StyledDiv onClick={() => {
+						setState({
+							rol: rol,
+							campeon: props.campeon.replace(" ", "%20")
+						})
+					}}>
 						<H1>
 							{props.campeon}
 						</H1>
+
 						<Img src={splash} />
-
-
-
-
 
 						< H3 >
 							{tittle}
-
-
 						</H3 >
-
 
 					</StyledDiv > : null
 				}
