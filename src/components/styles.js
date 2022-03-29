@@ -6,7 +6,7 @@ export const HR = styled.hr`
 
     height: 10px;
     width: ${props => props.main ? "70%" : "50%"};
-    background-color: #fff;
+    background-color: #000;
     margin: auto;
     border-radius: 25px;
     margin-top: 40px;
@@ -94,7 +94,7 @@ padding: 7px;
     margin-bottom: 0;
     margin-top: 0;
     text-align: center;
-    color: #fff;
+    color: ${props => props.intro ? "black" : "white"};
     font-family: 'Noto';
     margin-top: ${props => props.intro ? "200px" : "0"};
     font-style: ${props => props.intro ? "italic" : "normal"};
@@ -140,7 +140,7 @@ export const H3 = styled.h3`
 
 
 export const P = styled.p`
-    color: white;
+    color: #000;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
