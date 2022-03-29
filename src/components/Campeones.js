@@ -1,25 +1,17 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
 import { StyledDiv, H1, H3, Img, DivPrueba } from "./styles"
 import { StyledCampeones } from "./styles"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import fetchData from "./fetchData"
 const StyledLink = styled(Link)`
 text-decoration: none;
 height: 100%;
 `
 export const Campeones = ({ setState, state }) => {
-	const [lista, setlista] = useState([])
-	const rol = state.rol
-	var prueba = setState
+	const [lista, setlista] = useState({})
 
 
-	async function fetchData() {
-		const response = await axios.get("https://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion.json")
-		if (response.status === 200) {
-			setlista(response.data.data)
-		}
-	}
 
 
 
@@ -52,7 +44,7 @@ export const Campeones = ({ setState, state }) => {
 
 	const spliting = () => {
 
-		if (rol === " ") {
+		if (state.rol === " ") {
 			for (var x = 0; x < datos.nombres.length; x += 3) {
 				campeon = datos.nombres.slice(x, x + 3)
 
@@ -82,8 +74,10 @@ export const Campeones = ({ setState, state }) => {
 	spliting()
 
 
-	useEffect(() => {
-		fetchData()
+	useEffect(async () => {
+		const llamada = await fetchData()
+		setlista(llamada)
+
 	}, [])
 
 	const Bloque = (props) => {
@@ -94,8 +88,8 @@ export const Campeones = ({ setState, state }) => {
 
 
 		const filtro = () => {
-			if (rol !== " ") {
-				if (rolArr[0] === rol) {
+			if (state.rol !== " ") {
+				if (rolArr[0] === state.rol) {
 					return true
 				} else {
 					return false
@@ -110,13 +104,12 @@ export const Campeones = ({ setState, state }) => {
 		var newFoto = foto.replace(".png", "")
 		var splash = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${newFoto}_0.jpg`
 
-		filtro()
 		return (
 			<StyledLink to={`/Champ-Tracker/${props.campeon}`}>
 				{
 					filtro() ? <StyledDiv onClick={() => {
 						setState({
-							rol: rol,
+							rol: state.rol,
 							campeon: props.campeon.replace(" ", "%20")
 						})
 					}}>

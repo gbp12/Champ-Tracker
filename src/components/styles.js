@@ -41,7 +41,7 @@ export const DivFilter = styled.div`
 `
 
 export const StyledDiv = styled.div`
-    height: 100%;
+height: 100%;
     margin: 20px;
     background-color: #1e1e21;
     margin-top: 0px;
@@ -161,7 +161,8 @@ position: relative;
 export const DivPrueba = styled.div`
 display: flex;
 justify-content: space-around;
-width: 60%;
+align-items: center;
+width: 70%;
 margin: 50px   auto;
 @media only screen and (max-width: 800px) {
 		width: 100%;
