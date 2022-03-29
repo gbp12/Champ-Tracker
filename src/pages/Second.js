@@ -1,23 +1,39 @@
 import { H1 } from "../components/styles"
-import { useEffect } from "react"
-import fetchData from "../components/fetchData"
-export const Second = () => {
+import { Link } from "react-router-dom"
 
-    var llamada = {}
-    useEffect(async () => {
-        llamada = await fetchData()
-        console.log(llamada.Aatrox.name)
-
-    }, [])
+export const Second = ({ state }) => {
 
 
 
     return (
-        <H1>
+        <div>
 
-            jsjsjsjs
-            {llamada.Aatrox.name}
 
-        </H1>
+
+            <H1>
+                {state.campeon.nombre}
+            </H1>
+            <H1>
+                {state.campeon.titulo}
+            </H1>
+            <H1>
+                {state.campeon.rol[0]}
+
+            </H1>
+            <H1>
+                {state.campeon.rol[1]}
+
+            </H1>
+
+            <H1>
+
+                <Link to={"/Champ-Tracker"}>
+                    Volver
+                </Link>
+            </H1>
+
+
+
+        </div>
     )
 }

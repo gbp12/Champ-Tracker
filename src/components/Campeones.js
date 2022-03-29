@@ -13,8 +13,6 @@ export const Campeones = ({ setState, state }) => {
 
 
 
-
-
 	const datos = {
 		nombres: [],
 		titulos: [],
@@ -35,6 +33,7 @@ export const Campeones = ({ setState, state }) => {
 			datos.roles.push(Rol)
 
 		}
+
 	}
 
 
@@ -78,6 +77,8 @@ export const Campeones = ({ setState, state }) => {
 		const llamada = await fetchData()
 		setlista(llamada)
 
+
+
 	}, [])
 
 	const Bloque = (props) => {
@@ -110,8 +111,15 @@ export const Campeones = ({ setState, state }) => {
 					filtro() ? <StyledDiv onClick={() => {
 						setState({
 							rol: state.rol,
-							campeon: props.campeon.replace(" ", "%20")
+							campeon: {
+								nombre: props.campeon.replace(" ", "%20"),
+								titulo: tittle,
+								imagen: foto,
+								rol: rolArr
+
+							},
 						})
+
 					}}>
 						<H1>
 							{props.campeon}
