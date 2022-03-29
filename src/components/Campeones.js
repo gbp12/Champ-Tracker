@@ -21,18 +21,41 @@ export const Campeones = ({ setState, state }) => {
 	}
 
 	const initialDatos = () => {
-		for (var i in lista) {
-			var nombre = lista[i].name
-			var titulo = lista[i].title
-			var imagen = lista[i].image.full
-			var Rol = lista[i].tags
 
-			datos.nombres.push(nombre)
-			datos.titulos.push(titulo)
-			datos.imagenes.push(imagen)
-			datos.roles.push(Rol)
 
+		if (state.rol !== " ") {
+			for (var i in lista) {
+				var nombre = lista[i].name
+				var titulo = lista[i].title
+				var imagen = lista[i].image.full
+				var Rol = lista[i].tags
+				if (lista[i].tags[0] === state.rol) {
+					datos.nombres.push(nombre)
+					datos.titulos.push(titulo)
+					datos.imagenes.push(imagen)
+					datos.roles.push(Rol)
+				}
+
+
+			}
+
+
+		} else {
+			for (var i in lista) {
+				var nombre = lista[i].name
+				var titulo = lista[i].title
+				var imagen = lista[i].image.full
+				var Rol = lista[i].tags
+
+				datos.nombres.push(nombre)
+				datos.titulos.push(titulo)
+				datos.imagenes.push(imagen)
+				datos.roles.push(Rol)
+
+			}
 		}
+
+
 
 	}
 
@@ -88,71 +111,63 @@ export const Campeones = ({ setState, state }) => {
 		const rolArr = datos.roles.find((x) => datos.roles.indexOf(x) === index)
 
 
-		const filtro = () => {
-			if (state.rol !== " ") {
-				if (rolArr[0] === state.rol) {
-					return true
-				} else {
-					return false
-				}
 
-			} else {
-				return true
-			}
-
-		}
 
 		var newFoto = foto.replace(".png", "")
 		var splash = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${newFoto}_0.jpg`
 
 		return (
 			<StyledLink to={`/Champ-Tracker/${props.campeon}`}>
-				{
-					filtro() ? <StyledDiv onClick={() => {
-						setState({
-							rol: state.rol,
-							campeon: {
-								nombre: props.campeon.replace(" ", "%20"),
-								titulo: tittle,
-								imagen: foto,
-								rol: rolArr
 
-							},
-						})
+				<StyledDiv onClick={() => {
+					setState({
+						rol: state.rol,
+						campeon: {
+							nombre: props.campeon.replace(" ", "%20"),
+							titulo: tittle,
+							imagen: foto,
+							rol: rolArr
 
-					}}>
-						<H1>
-							{props.campeon}
-						</H1>
+						},
+					})
 
-						<Img src={splash} />
+				}}>
+					<H1>
+						{props.campeon}
+					</H1>
 
-						< H3 >
-							{tittle}
-						</H3 >
+					<Img src={splash} />
 
-					</StyledDiv > : null
-				}
+					< H3 >
+						{tittle}
+					</H3 >
+
+				</StyledDiv >
+
 			</StyledLink>
 
 		)
 	}
 
 	return (
-		<StyledCampeones>
+		<div>
 
-			{
-				filas.map((x) => (
-					<DivPrueba key={Math.random()} >
-						{
-							x.map((h) => (
-								<Bloque key={h} campeon={h} />
-							))
-						}
-					</DivPrueba>
-				))
-			}
-		</StyledCampeones>
+
+			<StyledCampeones>
+
+				{
+					filas.map((x) => (
+						<DivPrueba key={x} >
+							{
+								x.map((h) => (
+									<Bloque key={h} campeon={h} />
+								))
+							}
+						</DivPrueba>
+					))
+				}
+			</StyledCampeones>
+		</div>
 	)
 }
 
