@@ -43,7 +43,7 @@ export const DivFilter = styled.div`
 export const StyledDiv = styled.div`
 height: 100%;
     margin: 20px;
-    background-color: #1e1e21;
+    background-color: #434347;
     margin-top: 0px;
     @media only screen and (max-width: 700px) {
 		margin: 4px;
