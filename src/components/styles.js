@@ -4,8 +4,8 @@ import 'animate.css';
 export const ImgFondo = styled.img`
     width: 50%;
     margin-left: 25%;
-    border: 5px solid #fff;
-    padding: 7px;
+    border: 3px solid #fff;
+    padding: 5px;
     margin-bottom: 1vh;
 `
 export const HR = styled.hr`
