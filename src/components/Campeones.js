@@ -18,6 +18,7 @@ export const Campeones = ({ setState, state }) => {
 		titulos: [],
 		imagenes: [],
 		roles: [],
+		historias: [],
 	}
 
 	const initialDatos = () => {
@@ -29,11 +30,13 @@ export const Campeones = ({ setState, state }) => {
 				var titulo = lista[i].title
 				var imagen = lista[i].image.full
 				var Rol = lista[i].tags
+				var historia = lista[i].blurb
 				if (lista[i].tags[0] === state.rol) {
 					datos.nombres.push(nombre)
 					datos.titulos.push(titulo)
 					datos.imagenes.push(imagen)
 					datos.roles.push(Rol)
+					datos.historias.push(historia)
 				}
 
 
@@ -46,19 +49,21 @@ export const Campeones = ({ setState, state }) => {
 				var titulo = lista[i].title
 				var imagen = lista[i].image.full
 				var Rol = lista[i].tags
+				var historia = lista[i].blurb
+
 
 				datos.nombres.push(nombre)
 				datos.titulos.push(titulo)
 				datos.imagenes.push(imagen)
 				datos.roles.push(Rol)
+				datos.historias.push(historia)
+
 
 			}
 		}
 
 
-
 	}
-
 
 	const filas = []
 	var campeon = []
@@ -78,8 +83,8 @@ export const Campeones = ({ setState, state }) => {
 
 			}
 		} else {
-			for (var x = 0; x < datos.nombres.length; x += 1) {
-				campeon = datos.nombres.slice(x, x + 1)
+			for (var x = 0; x < datos.nombres.length; x += 2) {
+				campeon = datos.nombres.slice(x, x + 2)
 
 				filas.push(campeon)
 				campeon = []
@@ -109,6 +114,8 @@ export const Campeones = ({ setState, state }) => {
 		const tittle = datos.titulos.find((x) => datos.titulos.indexOf(x) === index)
 		const foto = datos.imagenes.find((x) => datos.imagenes.indexOf(x) === index)
 		const rolArr = datos.roles.find((x) => datos.roles.indexOf(x) === index)
+		const historia = datos.historias.find((x) => datos.historias.indexOf(x) === index)
+
 
 
 
@@ -126,7 +133,8 @@ export const Campeones = ({ setState, state }) => {
 							nombre: props.campeon.replace(" ", "%20"),
 							titulo: tittle,
 							imagen: foto,
-							rol: rolArr
+							rol: rolArr,
+							historia: historia
 
 						},
 					})

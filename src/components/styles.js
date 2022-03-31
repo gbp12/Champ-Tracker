@@ -1,7 +1,13 @@
 import styled from "styled-components"
 import 'animate.css';
 
-
+export const ImgFondo = styled.img`
+    width: 50%;
+    margin-left: 25%;
+    border: 5px solid #fff;
+    padding: 7px;
+    margin-bottom: 1vh;
+`
 export const HR = styled.hr`
 
     height: 10px;
@@ -144,6 +150,16 @@ export const P = styled.p`
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
+`
+
+export const P2 = styled(P)`
+    margin-right: 25%;
+    margin-left: 26%;
+    margin-bottom: 10vh;
+    text-align: justify;
+
+
+
 `
 /* imagen de campeones que aumentan con hover*/
 

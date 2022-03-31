@@ -11,7 +11,8 @@ const Generalrouters = () => {
             nombre: "",
             titulo: "",
             imagen: "",
-            rol: ""
+            rol: "",
+            historia: ""
         },
         rol: " ",
     });
