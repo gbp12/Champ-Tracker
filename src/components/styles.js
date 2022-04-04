@@ -88,11 +88,10 @@ export const StyledHeader = styled.header`
 export const H1 = styled.h1`
 	padding: 7px;
 	margin-bottom: 0;
-	margin-top: 0;
 	text-align: center;
 	color: ${(props) => (props.negro ? "black" : "white")};
 	font-family: "Noto";
-	margin-top: ${(props) => (props.intro ? "200px" : "0")};
+	margin-top: ${(props) => (props.intro ? "200px" : "0px")};
 	font-style: ${(props) => (props.intro ? "italic" : "normal")};
 	font-size: ${(props) => (props.intro ? "50px" : "1.6vw")};
 	@media only screen and (max-width: 800px) {
@@ -101,7 +100,7 @@ export const H1 = styled.h1`
 `
 
 export const H1Second = styled(H1)`
-	margin-top: 10px;
+	margin-top: 0;
 	font-size: 2vw;
 	@media only screen and (max-width: 1000px) {
 		font-size: 4vw;
@@ -112,7 +111,7 @@ export const H3 = styled.h3`
 	margin-bottom: 10px;
 	text-align: ${(props) => (props.cabecera ? "center" : "start")};
 	color: #fff;
-	margin-top: ${(props) => (props.cabecera ? "15px" : "20px")};
+	margin-top: ${(props) => (props.cabecera ? "15px" : "10px")};
 	margin-left: ${(props) => (props.cabecera ? "0" : "20px")};
 	font-family: ${(props) => (props.cabecera ? "Calibri" : "Noto")};
 	font-style: ${(props) => (props.cabecera ? "normal" : "italic")};
@@ -124,8 +123,8 @@ export const H3 = styled.h3`
 	@media only screen and (max-width: 1400px) {
 		margin-left: 0;
 	}
-	@media only screen and (max-width: 500px) {
-		font-size: ${(props) => (props.cabecera ? "big" : "1.5vw")};
+	@media only screen and (max-width: 800px) {
+		font-size: ${(props) => (props.cabecera ? "big" : "1.7vw")};
 	}
 
 	:hover {
@@ -167,7 +166,7 @@ export const DivPrueba = styled.div`
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	width: 70%;
+	width: 80%;
 	margin: 50px auto;
 	@media only screen and (max-width: 800px) {
 		width: 100%;
