@@ -96,6 +96,15 @@ export const H1 = styled.h1`
 	font-style: ${(props) => (props.intro ? "italic" : "normal")};
 	font-size: ${(props) => (props.intro ? "50px" : "2vw")};
 	@media only screen and (max-width: 800px) {
+		font-size: ${(props) => (props.intro ? "6vw" : "3vw")};
+	}
+`
+
+export const H1Second = styled(H1)`
+	margin-top: 10px;
+	font-size: 2vw;
+	@media only screen and (max-width: 1000px) {
+		font-size: 4vw;
 	}
 `
 
