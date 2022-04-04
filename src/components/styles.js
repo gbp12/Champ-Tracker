@@ -94,7 +94,7 @@ export const H1 = styled.h1`
 	font-family: "Noto";
 	margin-top: ${(props) => (props.intro ? "200px" : "0")};
 	font-style: ${(props) => (props.intro ? "italic" : "normal")};
-	font-size: ${(props) => (props.intro ? "50px" : "2vw")};
+	font-size: ${(props) => (props.intro ? "50px" : "1.6vw")};
 	@media only screen and (max-width: 800px) {
 		font-size: ${(props) => (props.intro ? "6vw" : "3vw")};
 	}
