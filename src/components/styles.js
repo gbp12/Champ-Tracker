@@ -94,9 +94,8 @@ export const H1 = styled.h1`
 	font-family: "Noto";
 	margin-top: ${(props) => (props.intro ? "200px" : "0")};
 	font-style: ${(props) => (props.intro ? "italic" : "normal")};
-	font-size: ${(props) => (props.intro ? "50px" : "130%")};
+	font-size: ${(props) => (props.intro ? "50px" : "2vw")};
 	@media only screen and (max-width: 800px) {
-		font-size: ${(props) => (props.intro ? "30px" : "15px")};
 	}
 `
 
@@ -108,14 +107,16 @@ export const H3 = styled.h3`
 	margin-left: ${(props) => (props.cabecera ? "0" : "20px")};
 	font-family: ${(props) => (props.cabecera ? "Calibri" : "Noto")};
 	font-style: ${(props) => (props.cabecera ? "normal" : "italic")};
-	font-size: ${(props) => (props.cabecera ? "big" : "medium")};
+	font-size: ${(props) => (props.cabecera ? "big" : "1vw")};
 	border: ${(props) => (props.filter ? "2px solid #fff" : "none")};
 	border-radius: 20px;
 	padding: 4px;
 
 	@media only screen and (max-width: 1400px) {
-		font-size: ${(props) => (props.cabecera ? "big" : "50%")};
 		margin-left: 0;
+	}
+	@media only screen and (max-width: 500px) {
+		font-size: ${(props) => (props.cabecera ? "big" : "1.5vw")};
 	}
 
 	:hover {
