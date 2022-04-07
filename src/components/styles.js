@@ -51,14 +51,14 @@ export const StyledDiv = styled.div`
 	margin: 20px;
 	background-color: #434347;
 	margin-top: 0px;
+	transition: background-color 0.2s linear;
+
 	@media only screen and (max-width: 700px) {
 		margin: 4px;
 		height: auto;
 	}
 
 	:hover {
-		transition: background-color 0.2s linear;
-
 		background-color: #000000;
 		cursor: pointer;
 
@@ -68,7 +68,7 @@ export const StyledDiv = styled.div`
 		}
 		Img {
 			transition: transform 0.2s linear;
-			transform: scale(1.04);
+			transform: scale(1.06);
 		}
 	}
 `
