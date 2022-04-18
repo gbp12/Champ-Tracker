@@ -76,7 +76,7 @@ export const StyledDiv = styled.div`
 export const StyledHeader = styled.header`
 	background-color: #000000;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 	position: fixed;
@@ -112,7 +112,9 @@ export const H3 = styled.h3`
 	text-align: ${(props) => (props.cabecera ? "center" : "start")};
 	color: #fff;
 	margin-top: ${(props) => (props.cabecera ? "15px" : "10px")};
-	margin-left: ${(props) => (props.cabecera ? "0" : "20px")};
+	margin-left: ${(props) => (props.cabecera ? "5%" : "20px")};
+	margin-right: ${(props) => (props.cabecera ? "5%" : "0")};
+
 	font-family: ${(props) => (props.cabecera ? "Calibri" : "Noto")};
 	font-style: ${(props) => (props.cabecera ? "normal" : "italic")};
 	font-size: ${(props) => (props.cabecera ? "big" : "1vw")};
@@ -120,11 +122,9 @@ export const H3 = styled.h3`
 	border-radius: 20px;
 	padding: 4px;
 
-	@media only screen and (max-width: 1400px) {
-		margin-left: 0;
-	}
 	@media only screen and (max-width: 800px) {
 		font-size: ${(props) => (props.cabecera ? "big" : "1.7vw")};
+		margin-left: ${(props) => (props.cabecera ? "5%" : "0")};
 	}
 
 	:hover {
