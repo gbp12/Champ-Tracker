@@ -27,10 +27,12 @@ export const Second = ({ state }) => {
 				{state.campeon.titulo}
 			</H1Second>
 			<ImgFondo src={splash} className="animate__animated animate__fadeIn animate__fast" />
-			<P2>{state.campeon.historia}</P2>
+			<P2 className="animate__animated animate__fadeIn animate__fast">{state.campeon.historia}</P2>
 
 			<H1>
-				<StyledLink to={"/Champ-Tracker"}>Go Back</StyledLink>
+				<StyledLink to={"/Champ-Tracker"} className="animate__animated animate__fadeIn animate__faster animate__delay-1s">
+					Go Back
+				</StyledLink>
 			</H1>
 		</div>
 	)
