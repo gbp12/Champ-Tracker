@@ -26,8 +26,8 @@ export const Second = ({ state }) => {
 			<H1Second intro negro className="animate__animated animate__zoomIn animate__fast">
 				{state.campeon.titulo}
 			</H1Second>
-			<ImgFondo src={splash} className="animate__animated animate__fadeIn animate__fast" />
-			<P2 className="animate__animated animate__fadeIn animate__fast">{state.campeon.historia}</P2>
+			<ImgFondo src={splash} className="animate__animated animate__fadeIn animate__slow" />
+			<P2 className="animate__animated animate__fadeIn animate__slow">{state.campeon.historia}</P2>
 
 			<H1>
 				<StyledLink to={"/Champ-Tracker"} className="animate__animated animate__fadeIn animate__faster animate__delay-1s">
