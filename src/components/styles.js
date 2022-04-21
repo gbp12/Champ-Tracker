@@ -180,6 +180,7 @@ export const Rol = styled(H3)`
 	border-right: 1px solid #fff;
 	border-left: 6px solid #fff;
 	border-bottom: 5px solid #fff;
+	margin-left: 0;
 	@media only screen and (max-width: 1500px) {
 		margin: 2%;
 	}
